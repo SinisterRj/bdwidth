@@ -30,7 +30,7 @@ class BDWidthMotionSensor:
         self.gcode = self.printer.lookup_object('gcode')
         self.extruder_name = config.get('extruder')
          
-        self.runout_helper = filament_switch_sensor.RunoutHelper(config)
+        self.runout_helper = filament_switch_sensor.RunoutHelper(config,self)
         self.get_status = self.runout_helper.get_status
         self.extruder = None
         self.estimated_print_time = None
